@@ -4,11 +4,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- --Bootstrap Css-- -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <!-- --Custom CSS-- -->
+    <link rel="stylesheet" href="css/styte.css">
+
+    <title>Project Altair</title>
 </head>
 
 <body>
-    <h1>WORKING!!!</h1>
+
+    <!-- --Header Area-- -->
+    <header id="header-area">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+
+                <!-- --Logo-- -->
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo.png" alt="Project Altair Logo">
+                </a>
+
+                <!-- --Toggle Button-- -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- --Nav Menu-- -->
+                <div class="collapse justify-content-end navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item ms-4">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item ms-4">
+                            <a class="nav-link" href="#about-area">About us</a>
+                        </li>
+                        <li class="nav-item ms-4">
+                            <a class="nav-link" href="#our-rover-area">Our Rover</a>
+                        </li>
+                        <li class="nav-item ms-4">
+                            <a class="nav-link" href="#">Achievements</a>
+                        </li>
+                        <li class="nav-item ms-4">
+                            <a class="nav-link" href="#">Our Partners</a>
+                        </li>
+                        <li class="nav-item ms-4">
+                            <a class="nav-link" href="#">Our Rover</a>
+                        </li>
+                        <li class="nav-item ms-4">
+                            <a class="nav-link" href="#">Gallery</a>
+                        </li>
+                        <li class="nav-item ms-4">
+                            <a class="nav-link contact-button" href="#">Contact Us</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+    </header>
+
+
+    <!-- --Hero Section-- -->
+    <section id="hero-area">
+        <div class="container hero">
+            <h3 class="display-6">Discover Mars</h3>
+            <h1 class="display-1 lh-1">Exploring the Red Planet
+                <br>with <span class="text-c-secondary">Our Rovers</span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- --About Section-- -->
+    <section id="about-area">
+        <div class="container about">
+            <div class="row">
+                <div class="col col-md-6 col-sm-12 col-12 px-md-0 about-image">
+                    <img class="img-fluid" src="images/about.png" alt="">
+                </div>
+                <div class="col col-md-6 col-sm-12 col-12 px-5 px-md-0 about-info">
+                    <h2 class="mb-5 h1">ABOUT <span class="text-c-secondary">US</span></h2>
+                    <p>At the forefront of interplanetary exploration, the Mars Rover Team is a group of passionate
+                        scientists, engineers, and
+                        space enthusiasts dedicated to unraveling the enigmatic mysteries of the Red Planet. With an
+                        unwavering commitment to
+                        pushing the boundaries of human knowledge, we have embarked on a remarkable journey to explore,
+                        study, and understand
+                        Mars like never before.
+                        <br><br> Our team operates at the intersection of cutting-edge technology and
+                        scientific discovery,
+                        developing and managing state-of-the-art rovers that traverse the Martian terrain, capturing
+                        breathtaking images,
+                        analyzing geological compositions, and probing the atmosphere. Armed with a collective spirit of
+                        curiosity, innovation,
+                        and perseverance, we are driven by the ambition to answer fundamental questions about the
+                        potential
+                        for past or present
+                        life on Mars, its geology, climate history, and the prospects for human exploration.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- --Our Rover Section-- -->
+    <section id="our-rover-area">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="mb-5 h1">OUR <span class="text-c-secondary">ROVER</span></h2>
+            </div>
+
+            <div class="rover-info row">
+                <div
+                    class="info-left col col-md-3 col-12 order-md-1 order-2 d-flex flex-column justify-content-between text-md-start text-center">
+                    <div class="info-card px-3 px-md-0">
+                        <h1 class="fw-bold">Sensors</h1>
+                        <p>The rover is equipped with a variety of instruments to sense its enviroment. Two cameras
+                            ensure the operator's
+                            awareness.</p>
+                    </div>
+
+                    <div class="info-card px-3 px-md-0">
+                        <h1 class="fw-bold">Expandable Modules</h1>
+                        <p>Different tasks require different tools. Our rover is build to quickly change its
+                            capabilities with removable modules.</p>
+                    </div>
+
+                </div>
+                <div class="rover-image col col-md-6 col-12 order-md-2 order-1 d-flex justify-content-center">
+                    <img src="images/rover.png" class="img-fluid" alt="">
+                </div>
+                <div
+                    class="info-right col col-md-3 col-12 order-md-3 order-3 d-flex flex-column justify-content-between text-md-end text-center">
+                    <div class="info-card px-3 px-md-0">
+                        <h1 class="fw-bold">Versatile manipulator</h1>
+                        <p>The manipulator is equipped with six rotational degrees of freedom. Which allows it to pick
+                            up objects up to 2 kg in
+                            weight.</p>
+                    </div>
+
+                    <div class="info-card px-3 px-md-0">
+                        <h1 class="fw-bold">Undercarriage</h1>
+                        <p>The undercarriage has a rocker suspension that can overcome difficult terrain. Each wheel can
+                            turn individually,
+                            providing advantage over differential skid steering.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="footer-area">
+        <div class="container d-flex justify-content-between pt-3 pb-5 footer ">
+            <p>&copy; 2023 Project Altair</p>
+            <div class="social-icons">
+                <img src="images/social1.png" alt="" class="img-fluid">
+                <img src="images/social2.png" alt="" class="img-fluid">
+                <img src="images/social3.png" alt="" class="img-fluid">
+            </div>
+        </div>
+    </footer>
+
+    <!-- --Bootstrap Js-- -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
