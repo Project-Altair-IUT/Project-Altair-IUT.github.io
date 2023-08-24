@@ -148,7 +148,6 @@ li {
     border-top: 1px solid #333;
     color: #818a9c;
 }
-
 /******************************
         Achievements
 *******************************/
@@ -166,7 +165,10 @@ li {
 .navigation-wrapper {
     position: relative;
 }
-
+#achievement-carousel {
+    margin: 0 auto;
+    max-width: 970px;
+}
 .dots {
     display: flex;
     padding: 10px 0;
@@ -205,14 +207,14 @@ li {
 }
 
 .arrow--left {
-    left: -20px;
+    left: 5px;
     fill: "#fff";
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='40' height='40' rx='6' fill='%23F5841F'/%3e%3cpath d='M16.8131 19.2362H26.1111V20.764H16.8131L20.9106 24.8615L19.8304 25.9416L13.8889 20.0001L19.8304 14.0586L20.9106 15.1387L16.8131 19.2362Z' fill='white'/%3e%3c/svg%3e ");
 }
 
 .arrow--right {
     left: auto;
-    right: -20px;
+    right: 5px;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='40' height='40' rx='6' fill='%23F5841F'/%3e%3cpath d='M23.187 19.2362L19.0895 15.1387L20.1696 14.0586L26.1111 20.0001L20.1696 25.9416L19.0895 24.8615L23.187 20.764H13.8889V19.2362H23.187Z' fill='white'/%3e%3c/svg%3e ");
 }
 
@@ -221,17 +223,9 @@ li {
 }
 
 .arrow--disabled.arrow--right {
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='40' height='40' rx='6' fill='white'/%3e%3cpath d='M23.187 19.2362L19.0895 15.1387L20.1696 14.0586L26.1111 20.0001L20.1696 25.9416L19.0895 24.8615L23.187 20.764H13.8889V19.2362H23.187Z' fill='black'/%3e%3c/svg%3e ");
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='40' height='40' rx='6' fill='white'/%3e%3cpath d='M23.187 19.2362L19.0895 15.1387L20.1696 14.0586L26.1111 20.0001L20.1696 25.9416L19.0895 24.8615L23.187 20.764H13.8889V19.2362H23.187Z' fill='%2307090D'/%3e%3c/svg%3e ");
 }
 
-#achievement-carousel {
-    /* width: 96%; */
-    margin-left: 38px;
-}
-/* .keen-slider__slide {
-    min-width: 380.333px !important;
-    max-width: 380.333px !important;
-} */
 /******************************
         Gallary
 *******************************/
@@ -263,4 +257,20 @@ li {
 }
 .grid__1 .r1c1_2 {
     grid-area: r1c1_2;
+}
+
+/******************************
+        Featured
+******************************/
+#featured {
+    padding-bottom: 320px;
+}
+.sub-heading {
+    max-width: 290px;
+}
+.max-w-350 {
+    max-width: 350px;
+}
+#featured-carousel .keen-slider__slide {
+    min-width: 270px;
 }

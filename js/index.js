@@ -1,3 +1,9 @@
+function createDiv(className) {
+    var div = document.createElement("div");
+    var classNames = className.split(" ");
+    classNames.forEach((name) => div.classList.add(name));
+    return div;
+}
 function navigationAchievement(slider) {
     let wrapper, dots, arrowLeft, arrowRight;
 
@@ -9,12 +15,6 @@ function navigationAchievement(slider) {
 
     function removeElement(elment) {
         elment.parentNode.removeChild(elment);
-    }
-    function createDiv(className) {
-        var div = document.createElement("div");
-        var classNames = className.split(" ");
-        classNames.forEach((name) => div.classList.add(name));
-        return div;
     }
 
     function arrowMarkup(remove) {
@@ -56,6 +56,7 @@ function navigationAchievement(slider) {
             dot.addEventListener("click", () => slider.moveToIdx(idx));
             dots.appendChild(dot);
         });
+
         wrapper.appendChild(dots);
     }
 
@@ -64,21 +65,23 @@ function navigationAchievement(slider) {
         slide === 0
             ? arrowLeft.classList.add("arrow--disabled")
             : arrowLeft.classList.remove("arrow--disabled");
+
         slide === slider.track.details.slides.length - 1
             ? arrowRight.classList.add("arrow--disabled")
             : arrowRight.classList.remove("arrow--disabled");
+
         Array.from(dots.children).forEach(function (dot, idx) {
             idx === slide
                 ? dot.classList.add("dot--active")
                 : dot.classList.remove("dot--active");
         });
     }
+
     slider.on("created", () => {
         markup();
         updateClasses();
     });
     slider.on("optionsChanged", () => {
-        console.log(2);
         markup(true);
         markup();
         updateClasses();
@@ -98,7 +101,16 @@ function gallaryArrowsInit(slider) {
     leftArrow.addEventListener("click", () => slider.prev());
     rightArrow.addEventListener("click", () => slider.next());
 }
-new KeenSlider(
+
+function featuredArrowsInit(slider) {
+    const leftArrow = document.getElementById("featured-left-arrow");
+    const rightArrow = document.getElementById("featured-right-arrow");
+
+    leftArrow.addEventListener("click", () => slider.prev());
+    rightArrow.addEventListener("click", () => slider.next());
+}
+
+const achievementCarousel = new KeenSlider(
     "#achievement-carousel",
     {
         loop: true,
@@ -116,10 +128,51 @@ new KeenSlider(
 );
 
 let gallaryCarousel = new KeenSlider("#gallary-carousel", {
-    loop: false,
+    loop: true,
     mode: "snap",
     rtl: false,
     slides: { perView: "auto", spacing: 16 },
 });
 
 gallaryArrowsInit(gallaryCarousel);
+
+function addDots(slider, wrapperSelector) {
+    const dots = createDiv("dots");
+    const wrapper = document.querySelector(wrapperSelector);
+    wrapper.appendChild(dots);
+
+    slider.track.details.slides.forEach((_e, idx) => {
+        var dot = createDiv("dot");
+        if (idx === 0) dot.classList.add("dot--active");
+        dot.addEventListener("click", () => slider.moveToIdx(idx));
+        dots.appendChild(dot);
+    });
+
+    function updateClasses() {
+        let slide = slider.track.details.rel;
+        Array.from(dots.children).forEach(function (dot, idx) {
+            idx === slide
+                ? dot.classList.add("dot--active")
+                : dot.classList.remove("dot--active");
+        });
+    }
+
+    slider.on("created", () => {
+        updateClasses();
+    });
+    slider.on("optionsChanged", () => {
+        updateClasses();
+    });
+    slider.on("slideChanged", () => {
+        updateClasses();
+    });
+}
+
+const featuredSlider = new KeenSlider("#featured-carousel", {
+    loop: true,
+    slides: { perView: "auto", spacing: 16 },
+});
+
+featuredArrowsInit(featuredSlider);
+addDots(featuredSlider, ".featured-dots-wrapper");
+addDots(gallaryCarousel, ".gallary-dots-header");
