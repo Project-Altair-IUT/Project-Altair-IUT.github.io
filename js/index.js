@@ -168,6 +168,24 @@ function addDots(slider, wrapperSelector) {
     });
 }
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    emailjs.init('kGEGbK2SHgEUBR0c2');
+
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        emailjs.sendForm('service_gf00ax5', 'template_53izycp', this)
+            .then(function () {
+                alert('Message sent successfully!');
+            }, function (error) {
+                alert('Failed to send message. Please try again later.');
+                console.log('FAILED...', error);
+            });
+    });
+});
+
+
 const featuredSlider = new KeenSlider("#featured-carousel", {
     loop: true,
     slides: { perView: "auto", spacing: 16 },
