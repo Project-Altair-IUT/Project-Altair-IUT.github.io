@@ -170,12 +170,12 @@ function addDots(slider, wrapperSelector) {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    emailjs.init('kGEGbK2SHgEUBR0c2');
+    emailjs.init('YtZT0QrgA2Ohytl0W');
 
     document.getElementById('contactForm').addEventListener('submit', function (event) {
         event.preventDefault();
 
-        emailjs.sendForm('service_gf00ax5', 'template_53izycp', this)
+        emailjs.sendForm('service_k636dg6', 'template_fsksrwd', this)
             .then(function () {
                 alert('Message sent successfully!');
             }, function (error) {
